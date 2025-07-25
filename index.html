@@ -121,10 +121,6 @@
         margin-left: auto !important;
         margin-right: auto !important;
       }
-      /* Botones de zoom siempre visibles en pantallas pequeñas */
-      #zoom-controls {
-        display: flex !important;
-      }
     }
     /* En pantallas grandes, permitir scroll pero ocultar visualmente la barra de scroll */
     @media (min-width: 1201px) {
@@ -164,52 +160,17 @@
         margin-left: auto !important;
         margin-right: auto !important;
       }
-      /* Ocultar controles de zoom en pantallas grandes */
-      #zoom-controls {
-        display: none !important;
-      }
     }
-    /* Estilos para los controles de zoom */
-    #zoom-controls {
-      position: fixed;
-      bottom: 16px;
-      right: 16px;
-      z-index: 9999;
-      display: none; /* Solo visible en pantallas pequeñas */
-      flex-direction: column;
-      gap: 8px;
-      background: rgba(255,255,255,0.9);
-      border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-      padding: 8px;
-    }
-    #zoom-controls button {
-      font-size: 1.5rem;
-      width: 40px;
-      height: 40px;
-      border: none;
-      background: #79ab93;
-      color: #fff;
-      border-radius: 50%;
-      cursor: pointer;
-      transition: background 0.2s;
-      outline: none;
-    }
-    #zoom-controls button:active {
-      background: #5e8c76;
-    }
-    #zoom-controls button:focus {
-      outline: 2px solid #333;
+    /* Cursividad para educación y cursos */
+    .card-title,
+    .card-body strong,
+    .card-body h6,
+    .card-body p.card-text {
+      font-style: italic;
     }
   </style>
 </head>
 <body>
-  <!-- Controles de zoom para pantallas pequeñas -->
-  <div id="zoom-controls" aria-label="Controles de tamaño">
-    <button id="zoom-in" title="Aumentar tamaño" aria-label="Aumentar tamaño"><i class="fas fa-plus"></i></button>
-    <button id="zoom-out" title="Disminuir tamaño" aria-label="Disminuir tamaño"><i class="fas fa-minus"></i></button>
-    <button id="zoom-reset" title="Restablecer tamaño" aria-label="Restablecer tamaño"><i class="fas fa-undo"></i></button>
-  </div>
   <div class="cv-outer-center">
     <div class="cv-center-wrapper">
       <div class="cv-main-row row w-100" style="max-width: 1200px;">
