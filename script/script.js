@@ -14,6 +14,8 @@
     { file: "/pdf/diploma_c.pdf", label: "Documento", seccion: "seccion12"},
     { file: "/pdf/diploma_e.pdf", label: "Documento", seccion: "seccion13"},
     { file: "/pdf/diploma_epa.pdf", label: "Documento", seccion: "seccion14"},
+    { file: "/pdf/certificado_inacap_2.pdf", label: "Documento", seccion: "seccion15"},
+     { file: "/pdf/certificado_alumno.pdf", label: "Documento", seccion: "seccion16"}
     
   ];
 
