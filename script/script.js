@@ -15,11 +15,15 @@
     { file: "/pdf/diploma_e.pdf", label: "Documento", seccion: "seccion13"},
     { file: "/pdf/diploma_epa.pdf", label: "Documento", seccion: "seccion14"},
     { file: "/pdf/certificado_inacap_2.pdf", label: "Documento", seccion: "seccion15"},
-     { file: "/pdf/certificado_alumno.pdf", label: "Documento", seccion: "seccion16"}
+    { file: "/pdf/certificado_alumno.pdf", label: "Documento", seccion: "seccion16"}
     
   ];
 
-  const password = "1234";
+  /* const password = "1234";
+  
+  <button class="btn btn-success mt-3" data-bs-toggle="modal" data-bs-target="#${downloadModalId}">
+      Descargar ${doc.label}
+  </button> */
 
   pdfData.forEach((doc, index) => {
     const viewModalId = `modalVerPDF${index}`;
@@ -37,9 +41,6 @@
     const html = `
       <button class="btn btn-outline-primary me-2 mt-3" data-bs-toggle="modal" data-bs-target="#${viewModalId}">
         Ver ${doc.label}
-      </button>
-      <button class="btn btn-success mt-3" data-bs-toggle="modal" data-bs-target="#${downloadModalId}">
-        Descargar ${doc.label}
       </button>
 
       <div class="modal fade" id="${viewModalId}" tabindex="-1" aria-hidden="true">
@@ -78,12 +79,10 @@
     seccion.insertAdjacentHTML("beforeend", html);
   });
 
-  // Timer logic for 20 seconds view
-  // Store timers to clear if needed
   const viewTimers = {};
 
   document.addEventListener("shown.bs.modal", function (e) {
-    // Only act for view modals
+
     const modal = e.target;
     if (!modal.id.startsWith("modalVerPDF")) return;
     const index = parseInt(modal.id.replace("modalVerPDF", ""), 10);
@@ -91,9 +90,9 @@
     const iframe = document.getElementById(`iframe${index}`);
     if (!timerMsg || !iframe) return;
 
-    let secondsLeft = 10;
+  /*   let secondsLeft = 30;
     timerMsg.style.display = "block";
-    timerMsg.textContent = `Tiempo restante para ver: ${secondsLeft} segundos`;
+    timerMsg.textContent = `Tiempo restante para ver: ${secondsLeft} segundos`; */
 
     // Enable iframe if previously disabled
     iframe.style.pointerEvents = "auto";
@@ -122,7 +121,7 @@
     // Only act for view modals
     const modal = e.target;
     if (!modal.id.startsWith("modalVerPDF")) return;
-    const index = parseInt(modal.id.replace("modalVerPDF", ""), 10);
+    const index = parseInt(modal.id.replace("modalVerPDF", ""), 30);
     const timerMsg = document.getElementById(`timerMsg${index}`);
     const iframe = document.getElementById(`iframe${index}`);
     if (viewTimers[index]) {
@@ -161,7 +160,7 @@
 
   document.addEventListener("click", function (e) {
     if (e.target && e.target.id && e.target.id.startsWith("downloadBtn")) {
-      const index = parseInt(e.target.id.replace("downloadBtn", ""), 10);
+      const index = parseInt(e.target.id.replace("downloadBtn", ""), 30);
       if (isNaN(index) || !pdfData[index]) return;
       const pdf = pdfData[index].file;
       const link = document.createElement("a");
