@@ -16,7 +16,9 @@
     { file: "/pdf/diploma_epa.pdf", label: "Documento", seccion: "seccion14"},
     { file: "/pdf/certificado_inacap_2.pdf", label: "Documento", seccion: "seccion15"},
     { file: "/pdf/certificado-alumno.pdf", label: "Documento", seccion: "seccion16"},
-    { file: "/pdf/Python-santander.pdf", label: "Documento", seccion: "seccion17"}
+    { file: "/pdf/Python-santander.pdf", label: "Documento", seccion: "seccion17"},
+    { file: "/pdf/ciudadania_digital.pdf", label: "Documento", seccion: "seccion18"},
+     { file: "/pdf/iso_27001.pdf", label: "Documento", seccion: "seccion19"}
     
   ];
 
